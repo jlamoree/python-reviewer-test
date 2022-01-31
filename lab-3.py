@@ -37,7 +37,7 @@ def main(argv):
 
 
 def kickoff_subprocess(cmd, log_file_name):
-    process = subprocess.call(cmd, shell=True)
+    process = subprocess.call(cmd, shell=False)
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
     output = timestamp + " Command: " + cmd[0] + " | Arg: " + cmd[1] + " | Return Code: " + str(process) + "\n"
     with open(log_file_name, "a+") as file:
